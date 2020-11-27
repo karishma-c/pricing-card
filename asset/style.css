@@ -1,0 +1,257 @@
+:root {
+    --ff: 'Montserrat', sans-serif;
+    --fs: 2.5rem;
+    --fs-1: 1.8rem;
+    --fs-2: 1.5rem;
+    --fs-3: 1rem;
+    --fs-4: .8rem;
+    --fs-5: .7rem;
+    --fw-1: 400;
+    --fw-2: 600;
+    --fw-3: 700;
+    --fw-4: 800;
+    --color-1: hsl(240, 78%, 98%);
+    --color-2: hsl(234, 14%, 74%);
+    --color-3: hsl(233, 13%, 49%);
+    --color-4: hsl(232, 13%, 33%);
+    --color-5: hsl(237, 63%, 64%);
+    --color-6: white;
+    --color-7: linear-gradient(hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    --br: 8px;
+}
+body {
+    background: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-color: var(--color-1);
+    font-size: 16px;
+}
+.main-container {
+    font-family: var(--ff);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.title {
+    font-size: var(--fs-1);
+    color: var(--color-3);
+    text-align: center;
+}
+.toggle-switch {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px auto;
+}
+.annual, .month {
+    font-size: var(--fs-3);
+    color: var(--color-2);
+    font-weight: var(--fw-2);
+    padding: 0 25px;
+}
+.toggle { 
+    position : relative ; 
+    display : flex; 
+    align-items: center;
+    width : 60px; 
+    height : 30px; 
+    background: var(--color-5); 
+    border-radius: 30px; 
+    border: 2px solid var(--color-5); 
+} 
+.round{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    left: 2px;
+    transition: all 0.5s;
+}
+.move {
+    left: 28px;
+}
+main {
+    width: 70%;
+}
+.card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    padding: 0;
+    width: 100%;
+}
+.basic-card, .professional-card, .master-card {
+    background-color: var(--color-6);
+    width: 260px;
+    height: 350px;
+    margin: 0;
+    padding: 0 10px 0 0;
+    border-radius: var(--br);
+    box-shadow: 5px 8px 10px rgba(0,0,0,.3);
+}
+.master-card {
+    padding: 0 0 0 10px;
+}
+.professional-card {
+    background: var(--color-7);
+    transform: scale(1.2);
+    color: var(--color-6);
+}
+.professional-card .card-title, .professional-card .symbol, .professional-card .annual-amount, .professional-card .month-amount, .professional-card .benefits, .professional-card .btn {
+    color: var(--color-6);
+} 
+.professional-card .benefits li {
+    border-top: 1px solid var(--color-6);
+    padding: 10px 35px;
+}
+.professional-card .benefits li:last-child {
+    border-bottom: 1px solid var(--color-6);
+}
+.professional-card .btn {
+    border: 1px solid var(--color-6);
+}   
+.card-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.card-title {
+    color: var(--color-3);
+    text-align: center;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-3);
+    margin: 20px 0 10px;
+    padding: 0;
+}
+.symbol {
+    font-size: var(--fs-2);
+    font-weight: var(--fw-4);
+    color: var(--color-4);
+    padding: 0 20px 0 0;
+    align-items: center;
+    margin: 15px 0;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+.annual-amount, .month-amount {
+    font-size: var(--fs);
+    font-weight: var(--fw-4);
+    color: var(--color-4);
+    padding: 0 10px;
+    align-items: center;
+    margin: 15px 0;
+}
+.amount-display {
+    display: none;
+}
+.benefits {
+    list-style-type: none;
+    color: var(--color-3);
+    text-align: center;
+    font-size: var(--fs-4);
+    font-weight: var(--fw-2);
+    padding: 0;
+    margin: 10px 0 20px;
+}
+.benefits li {
+    border-top: 1px solid var(--color-2);
+    padding: 10px 35px;
+}
+.benefits li:last-child {
+    border-bottom: 1px solid var(--color-2);
+}
+.btn {
+    width: 70%;
+    padding: 10px 20px;
+    background-color: inherit;
+    color: var(--color-4);
+    border: 1px solid var(--color-4);
+    margin: 10px auto 30px;
+    font-size: var(--fs-5);
+    font-weight: var(--fw-1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: var(--br);
+}
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto 10px;
+}
+.footer-content {
+    font-size: var(--fs-3);
+    font-weight: var(--fs-2);
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+.footer-content a {
+    text-decoration: none;
+    color: var(--color-5);
+}
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/*------- media queries --------*/
+@media(max-width:1100px) {
+    
+    main {
+        width: 80%;
+    }
+    .basic-card, .professional-card, .master-card {
+        width: 240px;
+        height: 350px;
+    }
+}
+
+@media(max-width:900px) {
+    
+    main {
+        width: 90%;
+    }
+    .card-container {
+        flex-flow: column nowrap;
+    }
+    .basic-card, .professional-card, .master-card {
+        width: 300px;
+        height: 350px;
+        margin: 20px auto;
+        padding: 0;
+    }
+    .professional-card {
+        transform: scale(1);
+    }
+}
+
+@media(max-width:700px) {
+
+    main {
+        width: 98%;
+    }
+    .basic-card, .professional-card, .master-card {
+        width: 300px;
+        height: 350px;
+        margin: 20px auto;
+        padding: 0;
+    }
+}
